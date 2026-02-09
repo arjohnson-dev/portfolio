@@ -456,18 +456,10 @@ body::before {
   background: linear-gradient(120deg, #ef4444, #b91c1c);
 }
 
-.auth-button.auth-button--save {
-  background: var(--mantine-color-colors-8);
-}
-
-.auth-button.auth-button--signin {
-  background: var(--mantine-color-colors-8);
-}
-
+.auth-button.auth-button--save,
+.auth-button.auth-button--signin,
 .auth-button.auth-button--ghost {
   background: var(--mantine-color-colors-8);
-  border: none;
-  color: white;
 }
 
 .auth-form__links {

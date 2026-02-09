@@ -19,10 +19,7 @@ export default function Home() {
   ];
 
   return (
-    <Container
-      size="xl"
-      className="page-container"
-    >
+    <Container size="xl" className="page-container">
       <Card
         shadow="xl"
         radius="lg"
@@ -129,8 +126,7 @@ export default function Home() {
                 <strong>C# and Unity Engine</strong>, I wanted to showcase some
                 of my other skills—so I built this portfolio site from scratch
                 using <strong>React and Vite</strong> and deployed it on{" "}
-                <strong>Vercel</strong>. The photos throughout are all my own
-                work.
+                <strong>Vercel</strong>. The photos throughout are all my own.
               </Text>
               <Text size="md" style={{ lineHeight: 1.7 }}>
                 When I'm not coding, you'll usually find me outdoors with my

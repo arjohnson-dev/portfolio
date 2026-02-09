@@ -1,26 +1,14 @@
 import { useState } from "react";
-import {
-  Container,
-  Title,
-  Text,
-  Group,
-  Tabs,
-  Stack,
-  useMantineTheme,
-} from "@mantine/core";
+import { Container, Title, Text, Group, Tabs, Stack } from "@mantine/core";
 import Card from "../components/Card";
 import TodoList from "../components/TodoList";
 import AuthPortal from "../components/AuthPortal";
 
 export default function Showcase() {
-  const theme = useMantineTheme();
   const [activeTab, setActiveTab] = useState("auth");
 
   return (
-    <Container
-      size="xl"
-      className="page-container"
-    >
+    <Container size="xl" className="page-container">
       <Card shadow="xl" radius="lg" p={40}>
         <Group
           justify="space-between"
@@ -64,37 +52,16 @@ export default function Showcase() {
           <Tabs.List>
             <Tabs.Tab value="auth">Auth Portal</Tabs.Tab>
             <Tabs.Tab value="todo">To-Do List</Tabs.Tab>
-            <Tabs.Tab value="saas">SaaS Dashboard</Tabs.Tab>
           </Tabs.List>
 
           <Tabs.Panel value="todo">
-            <Card
-              p="xl"
-              radius="md"
-            >
+            <Card p="xl" radius="md">
               <TodoList />
             </Card>
           </Tabs.Panel>
 
           <Tabs.Panel value="auth">
             <AuthPortal />
-          </Tabs.Panel>
-
-          <Tabs.Panel value="saas">
-            <Card
-              className="card-outline"
-              p="xl"
-              radius="md"
-            >
-              <Stack gap="sm">
-                <Title order={3} style={{ margin: 0 }}>
-                  SaaS Dashboard
-                </Title>
-                <Text size="sm" className="text-muted">
-                  Coming soon.
-                </Text>
-              </Stack>
-            </Card>
           </Tabs.Panel>
         </Tabs>
       </Card>

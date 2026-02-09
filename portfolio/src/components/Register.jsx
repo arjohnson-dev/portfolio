@@ -182,8 +182,14 @@ export default function Register({ onSignIn }) {
         </button>
         <Text size="xs" className="text-muted">
           By continuing, you agree to these{" "}
-          <a href="/terms">Terms of Service</a> and this{" "}
-          <a href="/privacy">Privacy Policy</a>.
+          <a href="/terms" target="_blank" rel="noreferrer">
+            Terms of Service
+          </a>{" "}
+          and this{" "}
+          <a href="/privacy" target="_blank" rel="noreferrer">
+            Privacy Policy
+          </a>
+          .
         </Text>
         <Text size="sm" className="text-muted">
           Already registered?{" "}

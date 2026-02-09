@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { TextInput, Button, Stack, Text, Paper } from "@mantine/core";
+import { TextInput, Button, Stack, Text } from "@mantine/core";
 import { IconPlus } from "@tabler/icons-react";
 import Todo from "./Todo";
 
@@ -26,7 +26,11 @@ function TodoList() {
               variant="subtle"
               color="colors"
               size="xs"
-              style={{ paddingInline: "var(--space-xs)" }}
+              style={{
+                paddingInline: "var(--space-xs)",
+                position: "relative",
+                right: "2px",
+              }}
             >
               <IconPlus size={16} />
             </Button>

@@ -1,23 +1,13 @@
-import { Container, Title, Text, Button } from "@mantine/core";
-import { IconDownload } from "@tabler/icons-react";
+import { Container, Text, Button } from "@mantine/core";
+import { IconExternalLink } from "@tabler/icons-react";
 import Card from "../components/Card";
 
-export default function Resume() {
-  const handleDownloadResume = () => {
-    // TODO: Replace with actual PDF download when resume is added
-    console.log("Resume download - coming soon!");
-  };
+const RESUME_PDF = "/AndrewJohnson_Resume.pdf";
 
+export default function Resume() {
   return (
-    <Container
-      size="xl"
-      className="page-container"
-    >
-      <Card
-        shadow="xl"
-        radius="lg"
-        p={40}
-      >
+    <Container size="xl" className="page-container">
+      <Card shadow="xl" radius="lg" p={40}>
         <div
           style={{
             display: "flex",
@@ -26,30 +16,34 @@ export default function Resume() {
             gap: "var(--space-xl)",
           }}
         >
-          <Title order={1} className="title-hero">
-            Resume
-          </Title>
+          <div style={{ width: "100%", maxWidth: 1000 }}>
+            <iframe
+              src={RESUME_PDF}
+              title="Andrew Johnson Resume"
+              style={{
+                width: "100%",
+                height: "80vh",
+                minHeight: "600px",
+                borderRadius: "12px",
+                background: "white",
+              }}
+            />
+          </div>
+
+          <Text size="sm" c="dimmed" style={{ textAlign: "center" }}>
+            If the embedded PDF doesn't load, use "Open in New Tab".
+          </Text>
 
           <Button
-            leftSection={<IconDownload size={20} />}
-            variant="filled"
-            size="lg"
-            onClick={handleDownloadResume}
-            styles={{
-              root: {
-                backgroundColor: "var(--mantine-color-colors-5)",
-                "&:hover": {
-                  backgroundColor: "var(--mantine-color-colors-6)",
-                },
-              },
-            }}
+            component="a"
+            href={RESUME_PDF}
+            target="_blank"
+            rel="noopener noreferrer"
+            variant="light"
+            leftSection={<IconExternalLink size={20} />}
           >
-            Download Resume (PDF)
+            Open in New Tab
           </Button>
-
-          <Text size="xl" style={{ textAlign: "center", marginTop: "var(--space-xl)" }}>
-            Coming Soon!
-          </Text>
         </div>
       </Card>
     </Container>

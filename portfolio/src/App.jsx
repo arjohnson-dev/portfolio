@@ -7,7 +7,6 @@ import Toolbar from "./components/Toolbar";
 import Home from "./views/Home";
 import WorkHistory from "./views/WorkHistory";
 import Resume from "./views/Resume";
-import ComingSoon from "./views/ComingSoon";
 import Showcase from "./views/Showcase";
 import TodoShowcase from "./views/TodoShowcase";
 import Contact from "./views/Contact";

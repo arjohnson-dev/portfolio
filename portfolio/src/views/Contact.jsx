@@ -5,17 +5,15 @@ import {
   IconMail,
 } from "@tabler/icons-react";
 import Card from "../components/Card";
-import headshot from "../assets/headshot_1.jpeg";
+import headshot from "../assets/headshot_2.jpeg";
 
 export default function Contact() {
-  const githubUrl = "https://github.com/your-handle";
-  const linkedinUrl = "https://www.linkedin.com/in/your-handle/";
+  const githubUrl = "https://github.com/arjohnson-dev/portfolio";
+  const linkedinUrl =
+    "https://www.linkedin.com/in/andrewjohnsonsoftwareengineer/";
 
   return (
-    <Container
-      size="xl"
-      className="page-container"
-    >
+    <Container size="xl" className="page-container">
       <Card shadow="xl" radius="lg" p={40}>
         <Group
           align="center"
@@ -24,8 +22,8 @@ export default function Contact() {
         >
           <Image
             src={headshot}
-            alt="Andrew Johnson headshot"
-            radius="xl"
+            alt="Andrew Johnson"
+            radius="md"
             fit="cover"
             style={{
               width: "var(--headshot-size)",
@@ -40,13 +38,13 @@ export default function Contact() {
               <Text
                 component="a"
                 href="mailto:arjohnson.dev@gmail.com"
-              style={{
-                fontSize: "1.1rem",
-                color: "white",
-                textDecoration: "none",
-                fontWeight: 600,
-              }}
-            >
+                style={{
+                  fontSize: "1.1rem",
+                  color: "white",
+                  textDecoration: "none",
+                  fontWeight: 600,
+                }}
+              >
                 arjohnson.dev@gmail.com
               </Text>
             </Group>
