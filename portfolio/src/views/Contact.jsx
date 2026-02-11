@@ -5,7 +5,7 @@ import {
   IconMail,
 } from "@tabler/icons-react";
 import Card from "../components/Card";
-import headshot from "../assets/headshot_2.jpeg";
+import headshot from "../assets/headshot_1.jpeg";
 
 export default function Contact() {
   const githubUrl = "https://github.com/arjohnson-dev/portfolio";
