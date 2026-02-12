@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 import {
   Anchor,
   Group,
@@ -8,6 +9,7 @@ import {
   Text,
   Title,
 } from "@mantine/core";
+import { IconChevronLeft, IconChevronRight, IconX } from "@tabler/icons-react";
 import Card from "./Card";
 import catchLogsIcon from "../assets/catchlogs-icon.png";
 
@@ -52,7 +54,43 @@ const screenshots =
 const showcaseScreenshots = screenshots.slice(0, 2);
 
 export default function CatchLogs() {
-  const [selectedShot, setSelectedShot] = useState(null);
+  const [selectedIndex, setSelectedIndex] = useState(null);
+  const selectedShot =
+    selectedIndex === null ? null : showcaseScreenshots[selectedIndex];
+
+  const showPrevious = () => {
+    setSelectedIndex((currentIndex) => {
+      if (currentIndex === null) return currentIndex;
+      return (currentIndex - 1 + showcaseScreenshots.length) %
+        showcaseScreenshots.length;
+    });
+  };
+
+  const showNext = () => {
+    setSelectedIndex((currentIndex) => {
+      if (currentIndex === null) return currentIndex;
+      return (currentIndex + 1) % showcaseScreenshots.length;
+    });
+  };
+
+  useEffect(() => {
+    if (selectedIndex === null) return undefined;
+
+    const handleKeyDown = (event) => {
+      if (event.key === "Escape") {
+        setSelectedIndex(null);
+      } else if (event.key === "ArrowLeft") {
+        event.preventDefault();
+        showPrevious();
+      } else if (event.key === "ArrowRight") {
+        event.preventDefault();
+        showNext();
+      }
+    };
+
+    window.addEventListener("keydown", handleKeyDown);
+    return () => window.removeEventListener("keydown", handleKeyDown);
+  }, [selectedIndex]);
 
   return (
     <Stack gap="lg">
@@ -82,11 +120,11 @@ export default function CatchLogs() {
       </Stack>
 
       <SimpleGrid cols={{ base: 1, sm: 2, md: 2 }} spacing="md">
-        {showcaseScreenshots.map((shot) => (
+        {showcaseScreenshots.map((shot, index) => (
           <Card key={shot.alt} p={0} radius="md" style={{ overflow: "hidden" }}>
             <button
               type="button"
-              onClick={() => setSelectedShot(shot)}
+              onClick={() => setSelectedIndex(index)}
               style={{
                 width: "100%",
                 display: "block",
@@ -110,73 +148,52 @@ export default function CatchLogs() {
         ))}
       </SimpleGrid>
 
-      {selectedShot && (
-        <div
-          role="dialog"
-          aria-modal="true"
-          aria-label={selectedShot.alt}
-          onClick={() => setSelectedShot(null)}
-          style={{
-            position: "fixed",
-            inset: 0,
-            zIndex: 1000,
-            background: "#000",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "center",
-            padding: "20px",
-          }}
-        >
+      {selectedShot &&
+        createPortal(
           <div
-            onClick={(e) => e.stopPropagation()}
-            style={{
-              width: "min(94vw, 1200px)",
-              maxHeight: "92vh",
-              position: "relative",
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "center",
-            }}
+            className="catchlogs-modal-overlay"
+            role="dialog"
+            aria-modal="true"
+            aria-label={selectedShot.alt}
+            onClick={() => setSelectedIndex(null)}
           >
-            <button
-              type="button"
-              onClick={() => setSelectedShot(null)}
-              aria-label="Close expanded image"
-              style={{
-                border: 0,
-                background: "rgba(255, 255, 255, 0.2)",
-                color: "#fff",
-                width: "36px",
-                height: "36px",
-                borderRadius: "999px",
-                cursor: "pointer",
-                position: "absolute",
-                top: "-14px",
-                right: "-14px",
-                fontSize: "22px",
-                lineHeight: 1,
-                display: "flex",
-                alignItems: "center",
-                justifyContent: "center",
-              }}
+            <div
+              className="catchlogs-modal-content"
+              onClick={(e) => e.stopPropagation()}
             >
-              ×
-            </button>
-            <img
-              src={selectedShot.src}
-              alt={selectedShot.alt}
-              style={{
-                width: "100%",
-                maxHeight: "90vh",
-                objectFit: "contain",
-                borderRadius: "10px",
-                boxShadow: "0 20px 50px rgba(0, 0, 0, 0.45)",
-                background: "#000",
-              }}
-            />
-          </div>
-        </div>
-      )}
+              <button
+                className="catchlogs-modal-nav catchlogs-modal-nav--left"
+                type="button"
+                onClick={showPrevious}
+                aria-label="Previous image"
+              >
+                <IconChevronLeft size={20} stroke={2.2} aria-hidden="true" />
+              </button>
+              <button
+                className="catchlogs-modal-close"
+                type="button"
+                onClick={() => setSelectedIndex(null)}
+                aria-label="Close expanded image"
+              >
+                <IconX size={18} stroke={2.2} aria-hidden="true" />
+              </button>
+              <img
+                className="catchlogs-modal-image"
+                src={selectedShot.src}
+                alt={selectedShot.alt}
+              />
+              <button
+                className="catchlogs-modal-nav catchlogs-modal-nav--right"
+                type="button"
+                onClick={showNext}
+                aria-label="Next image"
+              >
+                <IconChevronRight size={20} stroke={2.2} aria-hidden="true" />
+              </button>
+            </div>
+          </div>,
+          document.body,
+        )}
     </Stack>
   );
 }
