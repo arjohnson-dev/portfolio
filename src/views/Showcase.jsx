@@ -3,9 +3,10 @@ import { Container, Title, Text, Group, Tabs, Stack } from "@mantine/core";
 import Card from "../components/Card";
 import TodoList from "../components/TodoList";
 import AuthPortal from "../components/AuthPortal";
+import CatchLogs from "../components/CatchLogs";
 
 export default function Showcase() {
-  const [activeTab, setActiveTab] = useState("auth");
+  const [activeTab, setActiveTab] = useState("catch-logs");
 
   return (
     <Container size="xl" className="page-container">
@@ -50,9 +51,16 @@ export default function Showcase() {
           }}
         >
           <Tabs.List>
+            <Tabs.Tab value="catch-logs">Catch Logs</Tabs.Tab>
             <Tabs.Tab value="auth">Auth Portal</Tabs.Tab>
             <Tabs.Tab value="todo">To-Do List</Tabs.Tab>
           </Tabs.List>
+
+          <Tabs.Panel value="catch-logs">
+            <Card p="xl" radius="md">
+              <CatchLogs />
+            </Card>
+          </Tabs.Panel>
 
           <Tabs.Panel value="todo">
             <Card p="xl" radius="md">
