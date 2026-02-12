@@ -47,12 +47,13 @@ export default function WorkHistory() {
       dates: "2022 - 2023",
       description: (
         <>
-          Hired to help develop a <strong>mobile application</strong> for the{" "}
+          At ECS, I was hired to help develop a{" "}
+          <strong>mobile application</strong> for the{" "}
           <strong>U.S. Air Force</strong> and a{" "}
           <strong>VR training experience</strong>, that taught Military Working
-          Dog handlers how to treat heat stroke and heat exhaustion. I
-          <strong>researched canine behavior</strong> and worked closely with
-          the art team to build a{" "}
+          Dog handlers how to treat heat stroke and heat exhaustion. I{" "}
+          <strong>researched canine anatomy and physiology,</strong> and worked
+          closely with the art team to build a{" "}
           <strong>blended animation system within Unity</strong> that
           transitioned between healthy and sick states based on a computed
           condition index derived from metrics like temperature and hydration.
@@ -69,7 +70,7 @@ export default function WorkHistory() {
       dates: "2022",
       description: (
         <>
-          Supported the largest name in aluminum fishing and pleasure boats
+          Smokercraft is the largest name in aluminum fishing and pleasure boats
           across five brands, including Smokercraft, Starcraft, Sylvan,{" "}
           SunChaser, and Starweld. Here, I{" "}
           <strong>
@@ -93,14 +94,15 @@ export default function WorkHistory() {
       dates: "2021 - 2022",
       description: (
         <>
-          Partnered with <strong>Boeing</strong> engineers to build{" "}
-          <strong>virtual maintenance trainers (VMT)</strong> for aircraft such
-          as the <strong>F-15</strong> and <strong>P-8</strong>. Developed
-          primarily in <strong>Unity</strong> and contributed{" "}
-          <strong>C++</strong> to the simulation engine, grounding my game-dev
-          background in <strong>real-world training applications</strong> and
-          establishing a strong foundation in{" "}
-          <strong>simulation engineering</strong>.
+          During my time at SSE, <strong>I worked closely with Boeing</strong>{" "}
+          engineers to develop <strong>virtual maintenance trainers</strong>{" "}
+          (VMT's) for aircraft such as the <strong>F-15</strong> and{" "}
+          <strong>P-8A</strong>. While most development was done in{" "}
+          <strong>Unity</strong>, I also had the opportunity and privilege to
+          contribute <strong>C++</strong> to their simulation engine. That
+          experience helped me apply my game development background to{" "}
+          <strong>real-world training systems</strong> and build a strong
+          foundation in <strong>simulation engineering</strong>.
         </>
       ),
     },
