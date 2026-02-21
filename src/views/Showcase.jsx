@@ -2,7 +2,6 @@ import { useState } from "react";
 import { Container, Title, Text, Group, Tabs, Stack } from "@mantine/core";
 import Card from "../components/Card";
 import TodoList from "../components/TodoList";
-import AuthPortal from "../components/AuthPortal";
 import CatchLogs from "../components/CatchLogs";
 
 export default function Showcase() {
@@ -52,7 +51,6 @@ export default function Showcase() {
         >
           <Tabs.List>
             <Tabs.Tab value="catch-logs">Catch Logs</Tabs.Tab>
-            <Tabs.Tab value="auth">Auth Portal</Tabs.Tab>
             <Tabs.Tab value="todo">To-Do List</Tabs.Tab>
           </Tabs.List>
 
@@ -66,10 +64,6 @@ export default function Showcase() {
             <Card p="xl" radius="md">
               <TodoList />
             </Card>
-          </Tabs.Panel>
-
-          <Tabs.Panel value="auth">
-            <AuthPortal />
           </Tabs.Panel>
         </Tabs>
       </Card>

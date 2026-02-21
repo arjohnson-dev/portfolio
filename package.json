@@ -13,7 +13,6 @@
     "@mantine/carousel": "^8.3.14",
     "@mantine/core": "^8.3.14",
     "@mantine/hooks": "^8.3.14",
-    "@supabase/supabase-js": "^2.95.3",
     "@tabler/icons-react": "^3.36.1",
     "embla-carousel-autoplay": "^8.6.0",
     "embla-carousel-react": "^8.6.0",

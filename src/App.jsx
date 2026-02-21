@@ -12,7 +12,6 @@ import TodoShowcase from "./views/TodoShowcase";
 import Contact from "./views/Contact";
 import TermsOfService from "./views/TermsOfService";
 import PrivacyPolicy from "./views/PrivacyPolicy";
-import ResetPassword from "./views/ResetPassword";
 
 function App() {
   return (
@@ -28,7 +27,6 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/terms" element={<TermsOfService />} />
           <Route path="/privacy" element={<PrivacyPolicy />} />
-          <Route path="/reset-password" element={<ResetPassword />} />
         </Routes>
       </BrowserRouter>
     </MantineProvider>

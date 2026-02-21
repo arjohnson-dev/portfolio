@@ -7,11 +7,13 @@ import {
   SimpleGrid,
   Stack,
   Text,
-  Title,
 } from "@mantine/core";
 import { IconChevronLeft, IconChevronRight, IconX } from "@tabler/icons-react";
 import Card from "./Card";
 import catchLogsIcon from "../assets/catchlogs-icon.png";
+import journalViewImage from "../assets/journal-view.png";
+import mapViewImage from "../assets/map-view.png";
+import mapViewAltImage from "../assets/map-view-alt.png";
 
 const fallbackScreenshots = [
   {
@@ -28,30 +30,15 @@ const fallbackScreenshots = [
   },
 ];
 
-const localScreenshotModules = import.meta.glob(
-  [
-    "../assets/catchlogs-*.{png,jpg,jpeg,webp}",
-    "../assets/map-view.{png,jpg,jpeg,webp}",
-    "../assets/edit-entry.{png,jpg,jpeg,webp}",
-  ],
-  { eager: true, import: "default" },
-);
-
-const localScreenshots = Object.entries(localScreenshotModules)
-  .filter(([path]) => !path.endsWith("/catchlogs-icon.png"))
-  .sort(([a], [b]) => a.localeCompare(b))
-  .map(([path, src], index) => ({
-    src,
-    alt: `Catch Logs screenshot ${index + 1}: ${path
-      .split("/")
-      .pop()
-      .replace(/\.[^.]+$/, "")
-      .replace(/[-_]/g, " ")}`,
-  }));
+const localScreenshots = [
+  { src: journalViewImage, alt: "Catch Logs journal view" },
+  { src: mapViewImage, alt: "Catch Logs map view" },
+  { src: mapViewAltImage, alt: "Catch Logs alternate map view" },
+];
 
 const screenshots =
   localScreenshots.length > 0 ? localScreenshots : fallbackScreenshots;
-const showcaseScreenshots = screenshots.slice(0, 2);
+const showcaseScreenshots = screenshots.slice(0, 3);
 
 export default function CatchLogs() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -61,8 +48,10 @@ export default function CatchLogs() {
   const showPrevious = () => {
     setSelectedIndex((currentIndex) => {
       if (currentIndex === null) return currentIndex;
-      return (currentIndex - 1 + showcaseScreenshots.length) %
-        showcaseScreenshots.length;
+      return (
+        (currentIndex - 1 + showcaseScreenshots.length) %
+        showcaseScreenshots.length
+      );
     });
   };
 
@@ -95,21 +84,31 @@ export default function CatchLogs() {
   return (
     <Stack gap="lg">
       <Stack gap="xs">
-        <Group gap="md" align="center">
-          <Image
-            src={catchLogsIcon}
-            alt="Catch Logs icon"
-            w={46}
-            h={46}
-            radius={0}
-            fit="cover"
-            style={{ aspectRatio: "1 / 1" }}
-          />
-          <Title order={3}>Catch Logs</Title>
-        </Group>
-        <Anchor href="https://catch-logs.app/" target="_blank" rel="noreferrer">
-          catch-logs.app
+        <Anchor
+          href="https://catch-logs.app/"
+          target="_blank"
+          rel="noreferrer"
+          className="company-link catchlogs-link"
+          style={{ alignSelf: "flex-start" }}
+        >
+          <Group gap="xs" align="center" wrap="nowrap">
+            <Image
+              src={catchLogsIcon}
+              alt="Catch Logs icon"
+              fit="contain"
+              loading="lazy"
+              style={{
+                width: "var(--logo-size)",
+                height: "var(--logo-size)",
+              }}
+            />
+            <Text span style={{ fontSize: "1.5rem", fontWeight: 600 }}>
+              Catch Logs
+            </Text>
+            <IconChevronRight size={18} />
+          </Group>
         </Anchor>
+
         <Text className="text-muted" style={{ maxWidth: "70ch" }}>
           Catch Logs gives anglers a fast, focused way to document every outing,
           including catch details, location, tackle, time, and conditions.
@@ -119,7 +118,7 @@ export default function CatchLogs() {
         </Text>
       </Stack>
 
-      <SimpleGrid cols={{ base: 1, sm: 2, md: 2 }} spacing="md">
+      <SimpleGrid cols={{ base: 1, sm: 2, md: 3 }} spacing="md">
         {showcaseScreenshots.map((shot, index) => (
           <Card key={shot.alt} p={0} radius="md" style={{ overflow: "hidden" }}>
             <button
