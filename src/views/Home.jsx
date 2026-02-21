@@ -23,7 +23,7 @@ export default function Home() {
       <Card
         shadow="xl"
         radius="lg"
-        p={40}
+        p={{ base: "md", sm: 40 }}
         style={{
           display: "flex",
           flexDirection: "column",
@@ -36,11 +36,7 @@ export default function Home() {
         >
           {/* Left: Carousel */}
           <div
-            style={{
-              flex: "1 1 400px",
-              minWidth: "var(--content-min)",
-              maxWidth: "var(--content-max)",
-            }}
+            className="home-media-column"
           >
             <Carousel
               withIndicators
@@ -80,11 +76,11 @@ export default function Home() {
 
           {/* Right: Content */}
           <Stack
-            style={{ flex: "1 1 400px", minWidth: "var(--content-min)" }}
+            className="home-content-column"
             gap="md"
             justify="flex-start"
           >
-            <div style={{ textAlign: "right" }}>
+            <div className="home-heading">
               <h1
                 style={{
                   marginTop: 0,

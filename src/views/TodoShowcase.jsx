@@ -8,7 +8,7 @@ export default function TodoShowcase() {
       size="xl"
       className="page-container"
     >
-      <Card shadow="xl" radius="lg" p={40}>
+      <Card shadow="xl" radius="lg" p={{ base: "md", sm: 40 }}>
         <Group
           justify="space-between"
           align="center"

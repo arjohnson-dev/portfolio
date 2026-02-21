@@ -4,7 +4,7 @@ import Card from "../components/Card";
 export default function PrivacyPolicy() {
   return (
     <Container size="xl" className="page-container">
-      <Card shadow="xl" radius="lg" p={40}>
+      <Card shadow="xl" radius="lg" p={{ base: "md", sm: 40 }}>
         <Stack gap="md">
           <Title order={1} className="title-hero">
             Privacy Policy

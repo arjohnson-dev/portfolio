@@ -1,7 +1,8 @@
-import { Container, Text, Stack, Anchor, Group, Image } from "@mantine/core";
+import { Container, Text, Stack, Anchor, Image } from "@mantine/core";
 import {
   IconBrandGithub,
   IconBrandLinkedin,
+  IconBriefcase,
   IconMail,
 } from "@tabler/icons-react";
 import Card from "../components/Card";
@@ -11,15 +12,32 @@ export default function Contact() {
   const githubUrl = "https://github.com/arjohnson-dev/portfolio";
   const linkedinUrl =
     "https://www.linkedin.com/in/andrewjohnsonsoftwareengineer/";
+  const upworkUrl = "https://www.upwork.com/freelancers/~REPLACE_WITH_YOUR_ID";
+
+  const contactButtons = [
+    {
+      label: "Email",
+      href: "mailto:arjohnson.dev@gmail.com",
+      icon: <IconMail size={20} />,
+    },
+    { label: "GitHub", href: githubUrl, icon: <IconBrandGithub size={20} /> },
+    {
+      label: "LinkedIn",
+      href: linkedinUrl,
+      icon: <IconBrandLinkedin size={20} />,
+    },
+    { label: "Upwork", href: upworkUrl, icon: <IconBriefcase size={20} /> },
+  ];
 
   return (
-    <Container size="xl" className="page-container">
-      <Card shadow="xl" radius="lg" p={40}>
-        <Group
-          align="center"
-          justify="center"
-          style={{ flexWrap: "wrap", gap: "var(--space-xl)" }}
-        >
+    <Container size="sm" className="page-container">
+      <Card
+        shadow="xl"
+        radius="var(--radius-xl)"
+        p={{ base: "lg", sm: "xl" }}
+        className="contact-hub-card"
+      >
+        <Stack align="center" gap="md">
           <Image
             src={headshot}
             alt="Andrew Johnson"
@@ -32,58 +50,26 @@ export default function Contact() {
             }}
           />
 
-          <Stack align="flex-start" gap="md" style={{ textAlign: "left" }}>
-            <Group gap="xs" align="center">
-              <IconMail size={18} />
-              <Text
-                component="a"
-                href="mailto:arjohnson.dev@gmail.com"
-                style={{
-                  fontSize: "1.1rem",
-                  color: "white",
-                  textDecoration: "none",
-                  fontWeight: 600,
-                }}
-              >
-                arjohnson.dev@gmail.com
-              </Text>
-            </Group>
-
-            <Anchor
-              href={githubUrl}
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "var(--space-xs)",
-                color: "white",
-                textDecoration: "none",
-                fontWeight: 600,
-              }}
-            >
-              <IconBrandGithub size={18} />
-              GitHub
-            </Anchor>
-
-            <Anchor
-              href={linkedinUrl}
-              target="_blank"
-              rel="noreferrer"
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                gap: "var(--space-xs)",
-                color: "white",
-                textDecoration: "none",
-                fontWeight: 600,
-              }}
-            >
-              <IconBrandLinkedin size={18} />
-              LinkedIn
-            </Anchor>
+          <Stack align="center" gap={4}>
+            <Text className="contact-hub-name">Andrew Johnson</Text>
+            <Text className="contact-hub-tagline">Software Engineer</Text>
           </Stack>
-        </Group>
+
+          <Stack w="100%" gap="sm" className="contact-hub-links">
+            {contactButtons.map((item) => (
+              <Anchor
+                key={item.label}
+                href={item.href}
+                target={item.href.startsWith("mailto:") ? undefined : "_blank"}
+                rel={item.href.startsWith("mailto:") ? undefined : "noreferrer"}
+                className="contact-hub-button"
+              >
+                <span className="contact-hub-button__icon">{item.icon}</span>
+                <span className="contact-hub-button__label">{item.label}</span>
+              </Anchor>
+            ))}
+          </Stack>
+        </Stack>
       </Card>
     </Container>
   );

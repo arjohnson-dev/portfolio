@@ -110,13 +110,13 @@ export default function WorkHistory() {
 
   return (
     <Container size="xl" className="page-container">
-      <Card shadow="xl" radius="lg" p={40}>
+      <Card shadow="xl" radius="lg" p={{ base: "md", sm: 40 }}>
         <Title
           order={1}
           className="title-hero"
           style={{ marginBottom: "var(--space-2xl)", textAlign: "center" }}
         >
-          Work History
+          Career
         </Title>
 
         <Stack gap="var(--space-xl)">

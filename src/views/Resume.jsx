@@ -7,7 +7,7 @@ const RESUME_PDF = "/AndrewJohnson_Resume.pdf";
 export default function Resume() {
   return (
     <Container size="xl" className="page-container">
-      <Card shadow="xl" radius="lg" p={40}>
+      <Card shadow="xl" radius="lg" p={{ base: "md", sm: 40 }}>
         <div
           style={{
             display: "flex",
@@ -22,8 +22,8 @@ export default function Resume() {
               title="Andrew Johnson Resume"
               style={{
                 width: "100%",
-                height: "80vh",
-                minHeight: "600px",
+                height: "70vh",
+                minHeight: "420px",
                 borderRadius: "12px",
                 background: "white",
               }}

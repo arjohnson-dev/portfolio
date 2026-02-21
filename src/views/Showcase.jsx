@@ -1,15 +1,17 @@
 import { useState } from "react";
 import { Container, Title, Text, Group, Tabs, Stack } from "@mantine/core";
+import { useMediaQuery } from "@mantine/hooks";
 import Card from "../components/Card";
 import TodoList from "../components/TodoList";
 import CatchLogs from "../components/CatchLogs";
 
 export default function Showcase() {
   const [activeTab, setActiveTab] = useState("catch-logs");
+  const isDesktopTabs = useMediaQuery("(min-width: 64rem)");
 
   return (
     <Container size="xl" className="page-container">
-      <Card shadow="xl" radius="lg" p={40}>
+      <Card shadow="xl" radius="lg" p={{ base: "md", sm: 40 }}>
         <Group
           justify="space-between"
           align="center"
@@ -30,7 +32,7 @@ export default function Showcase() {
         </Group>
 
         <Tabs
-          orientation="vertical"
+          orientation={isDesktopTabs ? "vertical" : "horizontal"}
           value={activeTab}
           onChange={setActiveTab}
           keepMounted={false}
@@ -43,10 +45,15 @@ export default function Showcase() {
           styles={{
             root: { width: "100%" },
             list: {
-              minWidth: "var(--tabs-sidebar)",
-              padding: "var(--space-lg)",
+              minWidth: isDesktopTabs ? "var(--tabs-sidebar)" : undefined,
+              padding: isDesktopTabs
+                ? "var(--space-lg)"
+                : "0 0 var(--space-sm) 0",
             },
-            panel: { paddingLeft: "var(--space-lg)", width: "100%" },
+            panel: {
+              paddingLeft: isDesktopTabs ? "var(--space-lg)" : 0,
+              width: "100%",
+            },
           }}
         >
           <Tabs.List>
