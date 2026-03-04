@@ -4,6 +4,7 @@ import { useMediaQuery } from "@mantine/hooks";
 import Card from "../components/Card";
 import TodoList from "../components/TodoList";
 import CatchLogs from "../components/CatchLogs";
+import AariesSalon from "../components/AariesSalon";
 
 export default function Showcase() {
   const [activeTab, setActiveTab] = useState("catch-logs");
@@ -58,12 +59,19 @@ export default function Showcase() {
         >
           <Tabs.List>
             <Tabs.Tab value="catch-logs">Catch Logs</Tabs.Tab>
+            <Tabs.Tab value="aaries-salon">Aarie Styles Salon</Tabs.Tab>
             <Tabs.Tab value="todo">To-Do List</Tabs.Tab>
           </Tabs.List>
 
           <Tabs.Panel value="catch-logs">
             <Card p="xl" radius="md">
               <CatchLogs />
+            </Card>
+          </Tabs.Panel>
+
+          <Tabs.Panel value="aaries-salon">
+            <Card p="xl" radius="md">
+              <AariesSalon />
             </Card>
           </Tabs.Panel>
 
