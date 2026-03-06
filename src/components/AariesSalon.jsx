@@ -8,7 +8,7 @@ export default function AariesSalon() {
     <Stack gap="lg">
       <Stack gap="xs">
         <Anchor
-          href="https://aaries-salon.vercel.app/"
+          href="https://www.aariestylessalon.com"
           target="_blank"
           rel="noreferrer"
           className="company-link"
@@ -47,8 +47,8 @@ export default function AariesSalon() {
         </Text>
 
         <Text className="text-muted">
-          The result is a simple, modern site that clearly presents services
-          and contact information while establishing a more professional digital
+          The result is a simple, modern site that clearly presents services and
+          contact information while establishing a more professional digital
           presence.
         </Text>
 
