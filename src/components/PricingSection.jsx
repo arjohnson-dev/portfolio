@@ -1,5 +1,5 @@
-import { pricingPlans } from '../data/siteContent.js'
-import SectionIntro from './SectionIntro.jsx'
+import { pricingPlans } from "../data/siteContent.js";
+import SectionIntro from "./SectionIntro.jsx";
 
 function PricingSection() {
   return (
@@ -11,20 +11,20 @@ function PricingSection() {
       />
       <p className="pricing-note">
         These are two common starting points. If your project needs something
-        different, we can talk through the scope together and shape a quote
-        from there.
+        different, we can talk through the scope together and shape a quote from
+        there.
       </p>
 
       <div className="pricing-grid">
         {pricingPlans.map((plan) => (
           <article
-            className={`pricing-card ${plan.featured ? 'featured' : ''}`.trim()}
+            className={`pricing-card ${plan.featured ? "featured" : ""}`.trim()}
             key={plan.name}
           >
             {plan.badge ? (
               <div
                 className={`pricing-badge ${
-                  plan.badgeColor ? `pricing-badge--${plan.badgeColor}` : ''
+                  plan.badgeColor ? `pricing-badge--${plan.badgeColor}` : ""
                 }`.trim()}
               >
                 {plan.badge}
@@ -37,7 +37,7 @@ function PricingSection() {
                   <div className="pricing-price-label">Was</div>
                   <div className="pricing-original-price">
                     <sup>$</sup>
-                    {plan.originalPrice.replace('$', '')}
+                    {plan.originalPrice.replace("$", "")}
                   </div>
                 </div>
               ) : null}
@@ -46,14 +46,14 @@ function PricingSection() {
                   <div className="pricing-price-label">Now</div>
                 ) : null}
                 <div
-                  className={`pricing-price ${plan.custom ? 'pricing-price--custom' : ''} ${
-                    plan.priceColor ? `pricing-price--${plan.priceColor}` : ''
+                  className={`pricing-price ${plan.custom ? "pricing-price--custom" : ""} ${
+                    plan.priceColor ? `pricing-price--${plan.priceColor}` : ""
                   }`.trim()}
                 >
-                  {plan.price === '$250' || plan.price === '$800' ? (
+                  {plan.price === "$250" || plan.price === "$800" ? (
                     <>
                       <sup>$</sup>
-                      {plan.price.replace('$', '')}
+                      {plan.price.replace("$", "")}
                     </>
                   ) : (
                     plan.price
@@ -75,12 +75,17 @@ function PricingSection() {
       </div>
 
       <div className="pricing-actions">
-        <a href="#contact" className="btn-primary">
-          Book a free consultation
+        <a
+          href="https://calendly.com/arjohnson-dev"
+          className="btn-primary"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Book A Free Consultation
         </a>
       </div>
     </section>
-  )
+  );
 }
 
-export default PricingSection
+export default PricingSection;

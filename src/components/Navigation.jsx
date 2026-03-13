@@ -1,4 +1,4 @@
-import { navigationLinks } from '../data/siteContent.js'
+import { navigationLinks } from "../data/siteContent.js";
 
 function Navigation() {
   return (
@@ -16,10 +16,10 @@ function Navigation() {
       </ul>
 
       <a href="#contact" className="nav-cta">
-        Start a Conversation
+        CONTACT
       </a>
     </nav>
-  )
+  );
 }
 
-export default Navigation
+export default Navigation;

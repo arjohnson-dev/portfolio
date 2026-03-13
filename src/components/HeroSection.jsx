@@ -60,7 +60,12 @@ function HeroSection() {
             showHeroCta ? "hero-actions--visible" : ""
           }`}
         >
-          <a href="#contact" className="btn-primary">
+          <a
+            href="https://calendly.com/arjohnson-dev"
+            className="btn-primary"
+            target="_blank"
+            rel="noreferrer"
+          >
             Book A Free Consultation Now
           </a>
         </div>
