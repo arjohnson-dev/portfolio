@@ -10,7 +10,7 @@ import SiteFooter from '../components/SiteFooter.jsx'
 function HomePage() {
   return (
     <div className="page-shell">
-      <Navigation />
+      <Navigation page="home" />
       <main>
         <HeroSection />
         <ProcessSection />
@@ -19,7 +19,7 @@ function HomePage() {
         <FaqSection />
         <ContactSection />
       </main>
-      <SiteFooter />
+      <SiteFooter page="home" />
     </div>
   )
 }

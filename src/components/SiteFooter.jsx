@@ -1,7 +1,9 @@
-function SiteFooter() {
+function SiteFooter({ page = "home" }) {
+  const logoHref = page === "about" ? "/" : "#home";
+
   return (
     <footer className="site-footer">
-      <a href="#home" className="footer-logo">
+      <a href={logoHref} className="footer-logo">
         Andrew Johnson
       </a>
       <div className="footer-text">

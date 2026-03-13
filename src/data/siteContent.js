@@ -1,7 +1,11 @@
-export const navigationLinks = [
-  { label: "Services", href: "#services" },
-  { label: "Pricing", href: "#pricing" },
-  { label: "FAQ", href: "#faq" },
+export const navigationItems = [
+  { label: "Home", key: "home" },
+  { label: "Services", key: "services" },
+  { label: "Pricing", key: "pricing" },
+  { label: "FAQ", key: "faq" },
+  { label: "Contact", key: "contact" },
+  { label: "Portfolio", key: "portfolio" },
+  { label: "About Me", key: "about" },
 ];
 
 export const processItems = [
@@ -66,7 +70,7 @@ export const services = [
 
 export const pricingPlans = [
   {
-    badge: "Most Popular",
+    badge: "Best Deal",
     name: "Landing Page",
     price: "$250",
     priceColor: "blue",
@@ -83,7 +87,7 @@ export const pricingPlans = [
     cta: "Talk It Through",
   },
   {
-    badge: "Best Deal",
+    badge: "Most Popular",
     name: "Business Site",
     price: "$800",
     badgeColor: "warning",
@@ -149,5 +153,71 @@ export const faqs = [
     question: "How do we get started?",
     answer:
       "The easiest way is to send a message or schedule a quick call. We will talk through your business, what you want the website to accomplish, and the best approach for your project.",
+  },
+];
+
+export const aboutPhotos = [
+  {
+    src: "/headshot.jpeg",
+    alt: "Andrew Johnson outdoors in a portrait shot",
+    caption:
+      "Building thoughtful software with a practical, hands-on approach.",
+  },
+  {
+    src: "/looking-away.jpeg",
+    alt: "Andrew Johnson looking off-camera outdoors",
+    caption:
+      "A career shaped by simulation, product work, and modern web apps.",
+  },
+  {
+    src: "/montserrat.jpeg",
+    alt: "Andrew Johnson traveling near Montserrat",
+    caption: "Travel and time outdoors keep me grounded and curious.",
+  },
+  {
+    src: "/suki.jpeg",
+    alt: "Suki the dog relaxing outdoors",
+    caption: "Most adventures are better with my partner and our dog, Suki.",
+  },
+];
+
+export const portfolioProjects = [
+  {
+    name: "CatchLogs",
+    href: "https://catch-logs.app/",
+    description:
+      "A fishing log application for tracking catches and patterns over time.",
+    imageSrc: "/catchlogs-screenshot.png",
+    imageAlt: "Screenshot of the CatchLogs website",
+    imagePosition: "center 20%",
+  },
+  {
+    name: "Aarie Styles Salon",
+    href: "https://www.aariestylessalon.com/",
+    description:
+      "A polished salon website focused on services, trust, and clear booking paths.",
+    imageSrc: "/Aarie Styles.png",
+    imageAlt: "Screenshot of the Aarie Styles Salon website",
+  },
+  {
+    name: "Lana Johnson, LCSW",
+    href: "https://lana-johnson-lcsw.vercel.app/",
+    description:
+      "A modern therapy practice website with a calm presentation and clear information.",
+    imageSrc: "/lana-screenshot.png",
+    imageAlt: "Screenshot of the Lana Johnson LCSW website",
+  },
+  {
+    name: "Funhouse Pup Cuts",
+    href: "https://fpc-mock-up.vercel.app/",
+    description:
+      "A concept website built to present structure, hierarchy, and creative direction.",
+    imageSrc: "/fpc-screenshot.png",
+    imageAlt: "Screenshot of the Funhouse Pup Cuts concept website",
+  },
+  {
+    name: "Andrew Johnson Portfolio",
+    description:
+      "This site is also a proud piece of my portfolio, built as my personal web presence and a reflection of how I approach design and development.",
   },
 ];
