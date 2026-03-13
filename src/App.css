@@ -1576,12 +1576,15 @@ section {
 
   .nav-links li {
     width: 100%;
+    justify-content: center;
   }
 
   .nav-links a {
     width: 100%;
+    align-items: center;
     padding: 0.85rem 0;
     font-size: 0.95rem;
+    text-align: center;
   }
 
   section {

@@ -1,8 +1,15 @@
 import { useEffect, useState } from "react";
 import { navigationItems } from "../data/siteContent.js";
 
+function getLocationState() {
+  const pathname = window.location.pathname.replace(/\/+$/, "") || "/";
+  const hash = window.location.hash.replace(/^#/, "");
+  return { pathname, hash };
+}
+
 function Navigation({ page = "home" }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [locationState, setLocationState] = useState(getLocationState);
   const logoHref = page === "home" ? "#home" : "/";
   const navigationLinks = navigationItems.map((item) => {
     switch (item.key) {
@@ -16,6 +23,13 @@ function Navigation({ page = "home" }) {
         return { ...item, href: `/#${item.key}` };
     }
   });
+
+  const activeKey =
+    locationState.pathname === "/about"
+      ? "about"
+      : locationState.pathname === "/portfolio"
+        ? "portfolio"
+        : locationState.hash || "home";
 
   useEffect(() => {
     if (!isMenuOpen) {
@@ -34,6 +48,20 @@ function Navigation({ page = "home" }) {
       window.removeEventListener("keydown", handleEscape);
     };
   }, [isMenuOpen]);
+
+  useEffect(() => {
+    const syncLocation = () => {
+      setLocationState(getLocationState());
+    };
+
+    window.addEventListener("hashchange", syncLocation);
+    window.addEventListener("popstate", syncLocation);
+
+    return () => {
+      window.removeEventListener("hashchange", syncLocation);
+      window.removeEventListener("popstate", syncLocation);
+    };
+  }, []);
 
   const closeMenu = () => {
     setIsMenuOpen(false);
@@ -64,15 +92,29 @@ function Navigation({ page = "home" }) {
             <a
               href={link.href}
               className={[
-                link.key === page ? "nav-link-active" : "",
+                link.key === activeKey ? "nav-link-active" : "",
                 link.key === "portfolio" || link.key === "about"
                   ? "nav-link-external-page"
                   : "",
               ]
                 .filter(Boolean)
                 .join(" ")}
-              aria-current={link.key === page ? "page" : undefined}
-              onClick={closeMenu}
+              aria-current={link.key === activeKey ? "page" : undefined}
+              onClick={() => {
+                closeMenu();
+                setLocationState({
+                  pathname:
+                    link.key === "about"
+                      ? "/about"
+                      : link.key === "portfolio"
+                        ? "/portfolio"
+                        : "/",
+                  hash:
+                    link.key === "home" || link.key === "about" || link.key === "portfolio"
+                      ? ""
+                      : link.key,
+                });
+              }}
             >
               {link.label}
             </a>
