@@ -1,6 +1,6 @@
-import { services } from '../data/siteContent.js'
-import Icon from './Icon.jsx'
-import SectionIntro from './SectionIntro.jsx'
+import { services } from "../data/siteContent.js";
+import Icon from "./Icon.jsx";
+import SectionIntro from "./SectionIntro.jsx";
 
 function ServicesSection() {
   return (
@@ -9,7 +9,7 @@ function ServicesSection() {
         label="Ways I Can Help"
         title="Support that fits where your site is"
         emphasis="right now."
-        description="Whether you need a simple page, a fuller site, or help improving what already exists, we can choose an approach that makes sense for your business."
+        description="Whether you need a simple website, a full business site, or help improving an existing one, we can figure out the right approach for your business."
         className="section-intro--compact"
       />
 
@@ -25,7 +25,7 @@ function ServicesSection() {
         ))}
       </div>
     </section>
-  )
+  );
 }
 
-export default ServicesSection
+export default ServicesSection;

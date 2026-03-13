@@ -25,7 +25,7 @@ export const processItems = [
     number: "03",
     title: "You are starting fresh",
     description:
-      "If you're beginning from zero, that is completely fine too. We can define the structure, design, and messaging step by step from a clean slate.",
+      "If you’re starting from scratch, that’s completely fine too. We can build everything step by step—from the structure of the site to the design and content.",
   },
 ];
 
