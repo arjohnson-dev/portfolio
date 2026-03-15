@@ -216,7 +216,8 @@ export const portfolioProjects = [
     imageAlt: "Screenshot of the Funhouse Pup Cuts concept website",
   },
   {
-    name: "Andrew Johnson Portfolio",
+    name: "arjohnson.dev",
+    href: "https://arjohnson.dev/",
     description:
       "This site is also a proud piece of my portfolio, built as my personal web presence and a reflection of how I approach design and development.",
   },
