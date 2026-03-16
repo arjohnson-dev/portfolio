@@ -201,7 +201,7 @@ export const portfolioProjects = [
   },
   {
     name: "Lana Johnson, LCSW",
-    href: "https://lana-johnson-lcsw.vercel.app/",
+    href: "https://lanajohnsonlcsw.com/",
     description:
       "A modern therapy practice website with a calm presentation and clear information.",
     imageSrc: "/lana-screenshot.png",
