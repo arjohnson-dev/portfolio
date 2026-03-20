@@ -200,20 +200,20 @@ export const portfolioProjects = [
     imageAlt: "Screenshot of the Aarie Styles Salon website",
   },
   {
+    name: "Funhouse Pup Cuts",
+    href: "https://www.funhousepupcuts.com/",
+    description:
+      "A single-page service site for a circus-themed dog groomer located in Ypsilanti, Michigan.",
+    imageSrc: "/fpc-screenshot.png",
+    imageAlt: "Screenshot of the Funhouse Pup Cuts website",
+  },
+  {
     name: "Lana Johnson, LCSW",
     href: "https://lanajohnsonlcsw.com/",
     description:
       "A modern therapy practice website with a calm presentation and clear information.",
     imageSrc: "/lana-screenshot.png",
     imageAlt: "Screenshot of the Lana Johnson LCSW website",
-  },
-  {
-    name: "Funhouse Pup Cuts",
-    href: "https://fpc-mock-up.vercel.app/",
-    description:
-      "A concept website built to present structure, hierarchy, and creative direction.",
-    imageSrc: "/fpc-screenshot.png",
-    imageAlt: "Screenshot of the Funhouse Pup Cuts concept website",
   },
   {
     name: "arjohnson.dev",
