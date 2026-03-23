@@ -192,12 +192,12 @@ export const portfolioProjects = [
     imagePosition: "center 20%",
   },
   {
-    name: "Aarie Styles Salon",
-    href: "https://www.aariestylessalon.com/",
+    name: "www.circareclaim.com",
+    href: "https://www.circareclaim.com/",
     description:
-      "A polished salon website focused on services, trust, and clear booking paths.",
-    imageSrc: "/Aarie Styles.png",
-    imageAlt: "Screenshot of the Aarie Styles Salon website",
+      "A portfolio website entry featuring the Circa Reclaim project.",
+    imageSrc: "/circa-reclaim.png",
+    imageAlt: "Screenshot of the Circa Reclaim website",
   },
   {
     name: "Funhouse Pup Cuts",
@@ -206,6 +206,14 @@ export const portfolioProjects = [
       "A single-page service site for a circus-themed dog groomer located in Ypsilanti, Michigan.",
     imageSrc: "/fpc-screenshot.png",
     imageAlt: "Screenshot of the Funhouse Pup Cuts website",
+  },
+  {
+    name: "Aarie Styles Salon",
+    href: "https://www.aariestylessalon.com/",
+    description:
+      "A polished salon website focused on services, trust, and clear booking paths.",
+    imageSrc: "/Aarie Styles.png",
+    imageAlt: "Screenshot of the Aarie Styles Salon website",
   },
   {
     name: "Lana Johnson, LCSW",
