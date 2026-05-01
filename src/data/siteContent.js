@@ -72,10 +72,9 @@ export const pricingPlans = [
   {
     badge: "Best Deal",
     name: "Landing Page",
-    price: "$250",
+    price: "$500",
     priceColor: "blue",
     badgeColor: "error",
-    originalPrice: "$500",
     note: "1 page",
     features: [
       "One thoughtfully designed page",
@@ -89,10 +88,9 @@ export const pricingPlans = [
   {
     badge: "Most Popular",
     name: "Business Site",
-    price: "$800",
+    price: "$1200",
     badgeColor: "warning",
     priceColor: "purple",
-    originalPrice: "$1200",
     note: "4–6 pages",
     features: [
       "4 to 6 custom-designed pages",
@@ -190,6 +188,14 @@ export const portfolioProjects = [
     imageSrc: "/catchlogs-screenshot.png",
     imageAlt: "Screenshot of the CatchLogs website",
     imagePosition: "center 20%",
+  },
+  {
+    name: "Keep Birch Lake Beautiful",
+    href: "https://keepbirchlakebeautiful.com/",
+    description:
+      "A community-focused website for a lake stewardship initiative, designed to communicate the mission clearly and make local involvement feel approachable.",
+    imageSrc: "/keep-birch-lake-beautiful.png",
+    imageAlt: "Screenshot of the Keep Birch Lake Beautiful website",
   },
   {
     name: "www.circareclaim.com",

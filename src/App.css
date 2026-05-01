@@ -818,7 +818,6 @@ section {
 .pricing-price-row {
   display: flex;
   align-items: baseline;
-  gap: 5rem;
   margin-bottom: 0.25rem;
 }
 
@@ -826,40 +825,6 @@ section {
   display: flex;
   flex-direction: column;
   gap: 0.4rem;
-}
-
-.pricing-price-label {
-  color: var(--muted);
-  font-size: 0.68rem;
-  font-weight: 700;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.pricing-original-price {
-  position: relative;
-  color: var(--ink);
-  font-size: 3rem;
-  font-weight: 500;
-  line-height: 1;
-  opacity: 1;
-}
-
-.pricing-original-price::after {
-  content: "";
-  position: absolute;
-  top: 50%;
-  left: -0.04em;
-  width: calc(100% + 0.18em);
-  height: 2px;
-  background: rgba(255, 99, 99, 0.95);
-  transform: translateY(-50%);
-  pointer-events: none;
-}
-
-.pricing-original-price sup {
-  font-size: 1.2rem;
-  vertical-align: super;
 }
 
 .pricing-card.featured .pricing-name,

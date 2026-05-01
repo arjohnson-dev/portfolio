@@ -32,25 +32,13 @@ function PricingSection() {
             ) : null}
             <div className="pricing-name">{plan.name}</div>
             <div className="pricing-price-row">
-              {plan.originalPrice ? (
-                <div className="pricing-price-group">
-                  <div className="pricing-price-label">Was</div>
-                  <div className="pricing-original-price">
-                    <sup>$</sup>
-                    {plan.originalPrice.replace("$", "")}
-                  </div>
-                </div>
-              ) : null}
               <div className="pricing-price-group">
-                {plan.originalPrice ? (
-                  <div className="pricing-price-label">Now</div>
-                ) : null}
                 <div
                   className={`pricing-price ${plan.custom ? "pricing-price--custom" : ""} ${
                     plan.priceColor ? `pricing-price--${plan.priceColor}` : ""
                   }`.trim()}
                 >
-                  {plan.price === "$250" || plan.price === "$800" ? (
+                  {plan.price.startsWith("$") ? (
                     <>
                       <sup>$</sup>
                       {plan.price.replace("$", "")}
