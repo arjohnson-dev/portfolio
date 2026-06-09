@@ -70,7 +70,7 @@ export const services = [
 
 export const pricingPlans = [
   {
-    badge: "Best Deal",
+    badge: "Most Popular",
     name: "Landing Page",
     price: "$500",
     priceColor: "blue",
@@ -86,7 +86,7 @@ export const pricingPlans = [
     cta: "Talk It Through",
   },
   {
-    badge: "Most Popular",
+    badge: "Best Deal",
     name: "Business Site",
     price: "$1200",
     badgeColor: "warning",
