@@ -35,18 +35,18 @@ function AboutPage() {
                         platforms such as the F-15 and P-8A aircraft.
                       </p>
                       <p>
+                        I later joined ECS, where I built Unity-based
+                        applications and training systems for the U.S. Air Force
+                        while mentoring junior developers.
+                      </p>
+                    </div>
+                    <div className="about-hero-copy-column">
+                      <p>
                         Most recently, I served as Head of Product and Lead
                         Unity Developer at Space Grid AI, where I led
                         development of the company's core platform, managed a
                         small team of engineers and artists, and worked closely
                         with customers to shape product direction and strategy.
-                      </p>
-                    </div>
-                    <div className="about-hero-copy-column">
-                      <p>
-                        I later joined ECS, where I built Unity-based
-                        applications and training systems for the U.S. Air Force
-                        while mentoring junior developers.
                       </p>
                       <p>
                         Today I focus on building practical, well-designed
@@ -56,11 +56,14 @@ function AboutPage() {
                         tools that solve real problems, whether that's a custom
                         website, a web application, or a product like CatchLogs,
                         a fishing log application I built to help anglers track
-                        and analyze their catches. Outside of work, I enjoy
+                        and analyze their catches.
+                      </p>
+                      <p>
+                        Outside of work, I enjoy
                         traveling, spending time on the water, and getting
                         outdoors whenever I can. Much of my free time is spent
                         with my partner and our dog, Suki, exploring new places
-                        or simply enjoying a quiet day by the lake.
+                        or enjoying a quiet day by the lake.
                       </p>
                     </div>
                   </div>
