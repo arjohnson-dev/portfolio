@@ -10,9 +10,10 @@ function PricingSection() {
         emphasis="Shared expectations."
       />
       <p className="pricing-note">
-        These are two common starting points. If your project needs something
+        These are common starting points. If your project needs something
         different, we can talk through the scope together and shape a quote from
-        there.
+        there. Each package includes a package-specific monthly retainer for
+        ongoing support. Cancel at anytime.
       </p>
 
       <div className="pricing-grid">
@@ -23,9 +24,8 @@ function PricingSection() {
           >
             {plan.badge ? (
               <div
-                className={`pricing-badge ${
-                  plan.badgeColor ? `pricing-badge--${plan.badgeColor}` : ""
-                }`.trim()}
+                className={`pricing-badge ${plan.badgeColor ? `pricing-badge--${plan.badgeColor}` : ""
+                  }`.trim()}
               >
                 {plan.badge}
               </div>
@@ -34,9 +34,8 @@ function PricingSection() {
             <div className="pricing-price-row">
               <div className="pricing-price-group">
                 <div
-                  className={`pricing-price ${plan.custom ? "pricing-price--custom" : ""} ${
-                    plan.priceColor ? `pricing-price--${plan.priceColor}` : ""
-                  }`.trim()}
+                  className={`pricing-price ${plan.custom ? "pricing-price--custom" : ""} ${plan.priceColor ? `pricing-price--${plan.priceColor}` : ""
+                    }`.trim()}
                 >
                   {plan.price.startsWith("$") ? (
                     <>
@@ -47,6 +46,11 @@ function PricingSection() {
                     plan.price
                   )}
                 </div>
+                {plan.monthlyPrice ? (
+                  <div className="pricing-monthly-price">
+                    {plan.monthlyPrice}
+                  </div>
+                ) : null}
               </div>
             </div>
             {plan.note ? (

@@ -63,7 +63,7 @@ export const services = [
   {
     title: "Maintenance & Support",
     description:
-      "Ongoing support when you need updates, improvements, or a second set of eyes after launch.",
+      "Post-launch support for updates, improvements, and a second set of eyes after launch.",
     icon: "tool",
   },
 ];
@@ -73,6 +73,7 @@ export const pricingPlans = [
     badge: "Most Popular",
     name: "Landing Page",
     price: "$500",
+    monthlyPrice: "+ $10/mo",
     priceColor: "blue",
     badgeColor: "error",
     note: "1 page",
@@ -88,7 +89,8 @@ export const pricingPlans = [
   {
     badge: "Best Deal",
     name: "Business Site",
-    price: "$1200",
+    price: "$800",
+    monthlyPrice: "+ $15/mo",
     badgeColor: "warning",
     priceColor: "purple",
     note: "4–6 pages",
@@ -103,18 +105,35 @@ export const pricingPlans = [
     featured: true,
   },
   {
+    badge: "Online Store",
+    name: "eCommerce Site",
+    price: "$1200",
+    monthlyPrice: "+ $20/mo",
+    badgeColor: "gold",
+    priceColor: "gold",
+    note: "Storefront setup",
+    features: [
+      "Product or service catalog setup",
+      "Mobile-responsive shopping experience",
+      "Checkout or payment platform integration",
+      "SEO basics for key store pages",
+      "A strong fit for businesses ready to sell online",
+    ],
+    cta: "Plan Your Store",
+  },
+  {
     badge: "Custom Quote",
-    name: "",
+    name: "Custom Application",
     price: "Let's talk",
     priceColor: "",
     badgeColor: "blue",
     note: "For clients who need more than a standard package",
     features: [
-      "eCommerce or online store",
       "Web apps, backend services, & custom functionality",
       "Custom art, logos, & graphic design",
       "Redesigns & modernizations",
       "Anything that doesn't fit a standard package",
+      "Ongoing support shaped around the project",
     ],
     cta: "Request a Quote",
     custom: true,
@@ -145,7 +164,7 @@ export const faqs = [
   {
     question: "What happens after the website launches?",
     answer:
-      "After your site goes live, you can manage it yourself or continue working with me for ongoing support. I offer optional retainer services that cover content updates, small improvements, bug fixes, performance checks, and general maintenance. A retainer simply ensures you have reliable help available whenever you need it, so your website stays up to date while you focus on running your business. By default, I make project source code available on GitHub so it remains accessible for other developers to review or maintain if needed.",
+      "After your site goes live, your monthly retainer covers content updates, small improvements, bug fixes, performance checks, and general maintenance. A retainer ensures you have reliable help available whenever you need it, so your website stays up to date while you focus on running your business. By default, I make project source code available on GitHub so it remains accessible for other developers to review or maintain if needed.",
   },
   {
     question: "How do we get started?",
@@ -188,6 +207,14 @@ export const portfolioProjects = [
     imageSrc: "/catchlogs-screenshot.png",
     imageAlt: "Screenshot of the CatchLogs website",
     imagePosition: "center 20%",
+  },
+  {
+    name: "D's Powerwashing",
+    href: "https://dspowerwashing.com/",
+    description:
+      "A bold service website for a Greater Michiana power washing business, built around direct booking, clear service messaging, and a strong local brand presence.",
+    imageSrc: "/ds-powerwashing-screenshot.png",
+    imageAlt: "Screenshot of the D's Powerwashing website",
   },
   {
     name: "Keep Birch Lake Beautiful",
